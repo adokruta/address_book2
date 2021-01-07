@@ -25,6 +25,7 @@ class UzytkownikMeneger
 
 public:
     KsiazkaAdresowa();
+    UzytkownikMeneger(string nazwaPlikuZUzytkownikami) :  plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();

@@ -2,3 +2,5 @@
 2|Basia|12345|
 3|Bartek|123456|
 4|Kasia|Sisia|
+5|Michal|1234567890|
+6|Fifi|1|

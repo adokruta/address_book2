@@ -1,9 +1,5 @@
 #include "PlikZUzytkownikami.h"
 
-PlikZUzytkownikami:: PlikZUzytkownikami()
-{
-    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
-}
 
 bool PlikZUzytkownikami :: czyPlikJestPusty()
 {
