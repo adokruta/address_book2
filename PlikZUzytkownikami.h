@@ -20,7 +20,7 @@ class PlikZUzytkownikami
      Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
  public:
-     PlikZUzytkownikami();
+     PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI): nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI){};
      vector<Uzytkownik>  wczytajUzytkownikowZPliku();
      void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
 };
