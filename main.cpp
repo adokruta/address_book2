@@ -8,5 +8,6 @@ int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa;
     ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
     return 0;
 }
