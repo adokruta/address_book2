@@ -26,6 +26,8 @@ class UzytkownikMeneger
 public:
     KsiazkaAdresowa();
     void rejestracjaUzytkownika();
+    void wypiszWszystkichUzytkownikow();
+    void wczytajUzytkownikowZPliku();
 
 };
 
