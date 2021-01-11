@@ -75,7 +75,8 @@ void UzytkownikMeneger :: wczytajUzytkownikowZPliku()
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
-    cout << endl << "Podaj login: ";
+    system("cls");
+    cout << "Podaj login: ";
     login = metodyPomocnicze.wczytajLinie();
 
    for(int i=0; i <= uzytkownicy.size(); i++)
@@ -105,10 +106,17 @@ void UzytkownikMeneger :: wczytajUzytkownikowZPliku()
     return 0;
 }
 
+void UzytkownikMeneger :: ustawIdZalogowanegoUzytkownika()
+{
+    idZalogowanegoUzytkownika = logowanieUzytkownika();
+
+}
  int UzytkownikMeneger :: pobierzIdZalogowanegoUzytkownika()
  {
-     idZalogowanegoUzytkownika = logowanieUzytkownika();
+     return idZalogowanegoUzytkownika;
  }
+
+
 
 
 
