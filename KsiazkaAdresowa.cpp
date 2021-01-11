@@ -11,6 +11,11 @@ void KsiazkaAdresowa :: wypiszWszystkichUzytkownikow()
     uzytkownikMeneger.wypiszWszystkichUzytkownikow();
 }
 
+void KsiazkaAdresowa :: logowanieUzytkownika()
+{
+    uzytkownikMeneger.pobierzIdZalogowanegoUzytkownika();
+}
+
 
 
 
