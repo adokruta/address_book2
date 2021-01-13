@@ -8,36 +8,26 @@
 #include <sstream>
 
 #include "Adresat.h"
-#include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
+#include "UzytkownikMeneger.h"
+
 
 using namespace std;
 
 class AdresatMeneger
 {
-    int idZalogowanegoUzytkownika;
-
-
-
+    vector <Adresat> adresaci;
     MetodyPomocnicze metodyPomocnicze;
+    //UzytkownikMeneger uzytkownikMeneger;
+
 
     Adresat podajDaneNowegoAdresata();
 
     public:
 
-    int dodajAdresata();
-    vector <Adresat> adresaci;
+    AdresatMeneger();
     int idOstatniegoAdresata;
-
-
-
-
-    //void rejestracjaUzytkownika();
-   // void wypiszWszystkichUzytkownikow();
-    //void wczytajUzytkownikowZPliku();
-   /// int logowanieUzytkownika ();
-   // void ustawIdZalogowanegoUzytkownika();
-    //int pobierzIdZalogowanegoUzytkownika();
+    int dodajAdresata();
 
 };
 

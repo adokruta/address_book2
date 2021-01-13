@@ -1,32 +1,51 @@
-#ifndef ADRESATMENEGER_H
-#define ADRESATMENEGER_H
+#include "AdresatMeneger.h"
 
-#include <iostream>
-#include <vector>
-#include <windows.h>
-#include <fstream>
-#include <sstream>
-
-#include "Adresat.h"
-#include "MetodyPomocnicze.h"
-
-using namespace std;
-
-class AdresatMeneger
+AdresatMeneger :: AdresatMeneger()
 {
-    int idZalogowanegoUzytkownika;
+    idOstatniegoAdresata = 0;
+}
 
-    MetodyPomocnicze metodyPomocnicze;
+int AdresatMeneger :: dodajAdresata()
+{
+    Adresat adresat;
 
-    Adresat podajDaneNowegoAdresata();
+    system("cls");
+    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    adresat = podajDaneNowegoAdresata();
 
-    public:
+    adresaci.push_back(adresat);
+    //dopiszAdresataDoPliku(adresat);
 
-    int dodajAdresata();
-    vector <Adresat> adresaci;
-    int idOstatniegoAdresata;
+    return ++idOstatniegoAdresata;
+}
 
-};
+Adresat AdresatMeneger :: podajDaneNowegoAdresata()
+{
+    Adresat adresat;
 
-#endif
+    UzytkownikMeneger uzytkownikMeneger;
+
+    adresat.ustawId(++idOstatniegoAdresata);
+    adresat.ustawIdUzytkownika(uzytkownikMeneger.pobierzIdZalogowanegoUzytkownika());
+
+    cout << "Podaj imie: ";
+    adresat.ustawImie(metodyPomocnicze.wczytajLinie());
+    adresat.ustawImie(metodyPomocnicze.zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie()));
+
+    cout << "Podaj nazwisko: ";
+    adresat.ustawNazwisko(metodyPomocnicze.wczytajLinie());
+    adresat.ustawNazwisko(metodyPomocnicze.zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzNazwisko()));
+
+    cout << "Podaj numer telefonu: ";
+    adresat.ustawNumerTelefonu(metodyPomocnicze.wczytajLinie());
+
+    cout << "Podaj email: ";
+    adresat.ustawEmail(metodyPomocnicze.wczytajLinie());
+
+    cout << "Podaj adres: ";
+    adresat.ustawAdres(metodyPomocnicze.wczytajLinie());
+
+    return adresat;
+}
+
 
