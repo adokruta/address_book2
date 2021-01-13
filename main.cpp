@@ -9,7 +9,5 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt");
     ksiazkaAdresowa.wyswietlMenu();
 
-
-
     return 0;
 }
