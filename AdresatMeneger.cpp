@@ -22,8 +22,7 @@ int AdresatMeneger :: dodajAdresata()
 Adresat AdresatMeneger :: podajDaneNowegoAdresata()
 {
     Adresat adresat;
-
-    UzytkownikMeneger uzytkownikMeneger;
+    UzytkownikMeneger uzytkownikMeneger("Uzytkownicy.txt");
 
     adresat.ustawId(++idOstatniegoAdresata);
     adresat.ustawIdUzytkownika(uzytkownikMeneger.pobierzIdZalogowanegoUzytkownika());

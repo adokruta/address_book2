@@ -24,10 +24,8 @@ class UzytkownikMeneger
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
 
-
-
 public:
-    //KsiazkaAdresowa();
+
     UzytkownikMeneger(string nazwaPlikuZUzytkownikami) :  plikZUzytkownikami(nazwaPlikuZUzytkownikami){
     idZalogowanegoUzytkownika = 0;
     };

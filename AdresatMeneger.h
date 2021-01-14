@@ -18,7 +18,6 @@ class AdresatMeneger
 {
     vector <Adresat> adresaci;
     MetodyPomocnicze metodyPomocnicze;
-    //UzytkownikMeneger uzytkownikMeneger;
 
 
     Adresat podajDaneNowegoAdresata();
