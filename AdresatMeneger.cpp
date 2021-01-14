@@ -8,13 +8,14 @@ AdresatMeneger :: AdresatMeneger()
 int AdresatMeneger :: dodajAdresata()
 {
     Adresat adresat;
+    PlikZAdresatami plikZAdresatami;
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     return ++idOstatniegoAdresata;
 }
