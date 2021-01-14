@@ -43,16 +43,9 @@ void KsiazkaAdresowa :: wyswietlMenu()
         }
         else
         {
-            system("pause");
-            cout << "Menu uzytkownika";
-            system("pause");
-        }
+            adresatMeneger.idOstatniegoAdresata = adresatMeneger.dodajAdresata();
 
-
-        /*
-        {
-
-            if (adresaci.empty() == true)
+            /*if (adresaci.empty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
@@ -93,7 +86,7 @@ void KsiazkaAdresowa :: wyswietlMenu()
     }
 
 }
-
+}
 
 
 

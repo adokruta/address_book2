@@ -5,6 +5,7 @@
 
 #include "UzytkownikMeneger.h"
 #include "MetodyPomocnicze.h"
+#include "AdresatMeneger.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ class KsiazkaAdresowa
 {
     UzytkownikMeneger uzytkownikMeneger;
     MetodyPomocnicze metodyPomocnicze;
+    AdresatMeneger adresatMeneger;
+
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMeneger(nazwaPlikuZUzytkownikami){
@@ -21,6 +24,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
     void wyswietlMenu();
+
 
 };
 

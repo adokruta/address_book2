@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -13,6 +14,7 @@ public:
      string wczytajLinie();
      char wybierzOpcjeZMenuGlownego();
      char wczytajZnak();
+     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 
 #endif
