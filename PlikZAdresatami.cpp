@@ -20,7 +20,7 @@ string PlikZAdresatami :: zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiK
     return liniaZDanymiAdresata;
 }
 
-/*int PlikZAdresatami :: pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
+int PlikZAdresatami :: pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
 {
     int pozycjaRozpoczeciaIdUzytkownika = daneJednegoAdresataOddzielonePionowymiKreskami.find_first_of('|') + 1;
     int idUzytkownika = metodyPomocnicze.konwersjaStringNaInt(metodyPomocnicze.pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdUzytkownika));
@@ -34,15 +34,18 @@ int PlikZAdresatami :: pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(str
     int idAdresata = metodyPomocnicze.konwersjaStringNaInt(metodyPomocnicze.pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
-
+/*
 int PlikZAdresatami :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    Adresat adresat;
     vector <Adresat> adresaci;
     int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
 
+    UzytkownikMeneger uzytkownikMeneger("Uzytkownicy.txt");
+
+    cout << uzytkownikMeneger.idZalogowanegoUzytkownika << endl;
+    system ("pause");
     fstream plikTekstowy;
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
@@ -71,7 +74,7 @@ int PlikZAdresatami :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     else
         return 0;
 }
-
+*/
 Adresat PlikZAdresatami :: pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami)
 {
     Adresat adresat;
@@ -116,7 +119,7 @@ Adresat PlikZAdresatami :: pobierzDaneAdresata(string daneAdresataOddzielonePion
     }
     return adresat;
 }
-*/
+
 void PlikZAdresatami :: dopiszAdresataDoPliku(Adresat adresat)
 {
     PlikZAdresatami plikZAdresatami;
@@ -130,13 +133,13 @@ void PlikZAdresatami :: dopiszAdresataDoPliku(Adresat adresat)
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
-        if (plikZAdresatami.czyPlikJestPusty() == true)
+        if (czyPlikJestPusty(plikTekstowy) == true)
         {
-            plikTekstowy << liniaZDanymiAdresata;
+            plikTekstowy <<  liniaZDanymiAdresata;
         }
         else
         {
-            plikTekstowy << endl << liniaZDanymiAdresata ;
+            plikTekstowy <<  endl << liniaZDanymiAdresata ;
         }
     }
     else
@@ -149,9 +152,9 @@ void PlikZAdresatami :: dopiszAdresataDoPliku(Adresat adresat)
 
 
 
-bool PlikZAdresatami :: czyPlikJestPusty()
+bool PlikZAdresatami :: czyPlikJestPusty(fstream &plikTekstowy)
 {
-    fstream plikTekstowy;
+    //fstream plikTekstowy;
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
         return true;

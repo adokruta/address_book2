@@ -17,17 +17,22 @@ using namespace std;
 
 class AdresatMeneger
 {
+    friend class KsiazkaAdresowa;
+    friend class UzytkownikMeneger;
+
+    //
+    int idOstatniegoAdresata;
     vector <Adresat> adresaci;
+    Adresat adresat;
     MetodyPomocnicze metodyPomocnicze;
-
-
     Adresat podajDaneNowegoAdresata();
 
     public:
 
     AdresatMeneger();
-    int idOstatniegoAdresata;
+
     int dodajAdresata();
+
 
 };
 

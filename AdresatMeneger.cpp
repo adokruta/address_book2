@@ -7,7 +7,6 @@ AdresatMeneger :: AdresatMeneger()
 
 int AdresatMeneger :: dodajAdresata()
 {
-    Adresat adresat;
     PlikZAdresatami plikZAdresatami;
 
     system("cls");
@@ -17,12 +16,12 @@ int AdresatMeneger :: dodajAdresata()
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    return ++idOstatniegoAdresata;
+    return idOstatniegoAdresata;
 }
 
 Adresat AdresatMeneger :: podajDaneNowegoAdresata()
 {
-    Adresat adresat;
+
     UzytkownikMeneger uzytkownikMeneger("Uzytkownicy.txt");
 
     adresat.ustawId(++idOstatniegoAdresata);
@@ -47,5 +46,6 @@ Adresat AdresatMeneger :: podajDaneNowegoAdresata()
 
     return adresat;
 }
+
 
 

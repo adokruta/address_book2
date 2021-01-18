@@ -72,7 +72,7 @@ void UzytkownikMeneger :: wczytajUzytkownikowZPliku()
 
  int UzytkownikMeneger :: logowanieUzytkownika()
 {
-    Uzytkownik uzytkownik;
+
     string login = "", haslo = "";
 
     system("cls");
@@ -92,6 +92,7 @@ void UzytkownikMeneger :: wczytajUzytkownikowZPliku()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
+                    zalogowanyUzytkownik = uzytkownicy[i];
                     return uzytkownicy[i].pobierzId();
                 }
             }
@@ -108,15 +109,101 @@ void UzytkownikMeneger :: wczytajUzytkownikowZPliku()
 
 void UzytkownikMeneger :: ustawIdZalogowanegoUzytkownika()
 {
-    idZalogowanegoUzytkownika = logowanieUzytkownika();
+    zalogowanyUzytkownik.ustawId(logowanieUzytkownika());
 
 }
  int UzytkownikMeneger :: pobierzIdZalogowanegoUzytkownika()
  {
-     return idZalogowanegoUzytkownika;
+     return zalogowanyUzytkownik.pobierzId();
  }
 
+ int UzytkownikMeneger :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+{
+    Adresat adresat;
+    PlikZAdresatami plikZAdresatami;
+    AdresatMeneger adresatMeneger;
 
+    int idOstatniegoAdresata = 0;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    string daneOstaniegoAdresataWPliku = "";
+
+    system ("pause");
+    fstream plikTekstowy;
+    plikTekstowy.open(plikZAdresatami.nazwaPlikuZAdresatami.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true)
+    {
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
+        {
+            if(pobierzIdZalogowanegoUzytkownika() == plikZAdresatami.pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            {
+                adresat = plikZAdresatami.pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
+                adresaci.push_back(adresat);
+            }
+        }
+        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+    }
+    else
+        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+
+    plikTekstowy.close();
+
+    if (daneOstaniegoAdresataWPliku != "")
+    {
+        idOstatniegoAdresata = plikZAdresatami.pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
+        return idOstatniegoAdresata;
+    }
+    else
+        return 0;
+}
+
+void UzytkownikMeneger :: wyswietlAdresatowZalogowanegoUzytkownika()
+{
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        for (int i=0; i<adresaci.size(); i++)
+        {
+            wyswietlDaneAdresata(adresaci[i]);
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
+
+void UzytkownikMeneger :: wyswietlDaneAdresata(Adresat adresat)
+{
+    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
+    cout << "Imie:               " << adresat.pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresat.pobierzNazwisko()  << endl;
+    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu()  << endl;
+    cout << "Email:              " << adresat.pobierzEmail()  << endl;
+    cout << "Adres:              " << adresat.pobierzAdres()  << endl;
+}
+
+void UzytkownikMeneger ::  zmianaHaslaZalogowanegoUzytkownika()
+{
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = metodyPomocnicze.wczytajLinie();
+
+    for (int i=0; i <=uzytkownicy.size(); i++)
+    {
+        if (uzytkownicy[i].pobierzId() == pobierzIdZalogowanegoUzytkownika())
+        {
+            uzytkownicy[i].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
 
 
 
