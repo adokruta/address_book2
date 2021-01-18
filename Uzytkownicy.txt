@@ -1,8 +1,2 @@
-1|Adrian|123|
-2|Basia|12345|
-3|Bartek|123456|
-4|Kasia|Sisia|
-5|Katie|123|
-6|Adek|12345|
-7|Adis|Mis|
-8|Jacek|placek|
+1|A|1|
+2|B|2|

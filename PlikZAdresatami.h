@@ -16,21 +16,22 @@ using namespace std;
 
 class PlikZAdresatami
 {
+     friend class UzytkownikMeneger;
      string nazwaPlikuZAdresatami;
-    // Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-     bool czyPlikJestPusty();
+     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+     bool czyPlikJestPusty(fstream &plikTekstowy);
      string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
      Adresat adresat;
      MetodyPomocnicze metodyPomocnicze;
-     //UzytkownikMeneger uzytkownikMeneger;
 
-     //int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-     //int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+
+     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
  public:
 
      PlikZAdresatami();
-    // int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+     //int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
      void dopiszAdresataDoPliku(Adresat adresat);
 
 };

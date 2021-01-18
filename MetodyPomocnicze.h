@@ -15,6 +15,13 @@ public:
      char wybierzOpcjeZMenuGlownego();
      char wczytajZnak();
      string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+     int konwersjaStringNaInt(string liczba);
+     string pobierzLiczbe(string tekst, int pozycjaZnaku);
+     char wybierzOpcjeZMenuUzytkownika();
 };
+
+
+
+
 
 #endif

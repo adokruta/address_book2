@@ -14,11 +14,14 @@ class KsiazkaAdresowa
     UzytkownikMeneger uzytkownikMeneger;
     MetodyPomocnicze metodyPomocnicze;
     AdresatMeneger adresatMeneger;
+    PlikZAdresatami plikZAdresatami;
+    int idZalogowanegoUzytkownika;
 
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMeneger(nazwaPlikuZUzytkownikami){
     uzytkownikMeneger.wczytajUzytkownikowZPliku();
+    idZalogowanegoUzytkownika = 0;
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

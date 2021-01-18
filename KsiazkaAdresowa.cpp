@@ -20,7 +20,7 @@ void KsiazkaAdresowa :: wyswietlMenu()
 {
     while (true)
     {
-        if (uzytkownikMeneger.pobierzIdZalogowanegoUzytkownika() == 0)
+        if (idZalogowanegoUzytkownika == 0)
         {
            char wybor = metodyPomocnicze.wybierzOpcjeZMenuGlownego();
 
@@ -31,6 +31,7 @@ void KsiazkaAdresowa :: wyswietlMenu()
                 break;
             case '2':
                 logowanieUzytkownika();
+                idZalogowanegoUzytkownika = 1;
                 break;
             case '9':
                 exit(0);
@@ -43,50 +44,49 @@ void KsiazkaAdresowa :: wyswietlMenu()
         }
         else
         {
-            adresatMeneger.idOstatniegoAdresata = adresatMeneger.dodajAdresata();
 
-            /*if (adresaci.empty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
 
-            wybor = wybierzOpcjeZMenuUzytkownika();
+            if (adresatMeneger.adresaci.empty() == true)
+                {
+                    adresatMeneger.idOstatniegoAdresata = uzytkownikMeneger.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+                }
+
+            char wybor = metodyPomocnicze.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
-                idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                adresatMeneger.idOstatniegoAdresata = adresatMeneger.dodajAdresata();
                 break;
-            case '2':
+           /* case '2':
                 wyszukajAdresatowPoImieniu(adresaci);
                 break;
             case '3':
                 wyszukajAdresatowPoNazwisku(adresaci);
-                break;
+                break; */
             case '4':
-                wyswietlWszystkichAdresatow(adresaci);
-                break;
+                uzytkownikMeneger.wyswietlAdresatowZalogowanegoUzytkownika();
+                break; /*
             case '5':
                 idUsunietegoAdresata = usunAdresata(adresaci);
                 idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
                 edytujAdresata(adresaci);
-                break;
+                break; */
             case '7':
-                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                uzytkownikMeneger.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
                 idZalogowanegoUzytkownika = 0;
-                adresaci.clear();
+                adresatMeneger.adresaci.clear();
                 break;
             }
-        }*/
+        }
     }
 
 }
-}
+
 
 
 
