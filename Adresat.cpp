@@ -1,3 +1,4 @@
+
 #include "Adresat.h"
 
     void Adresat :: ustawId(int noweId)
