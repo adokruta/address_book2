@@ -12,16 +12,12 @@ class MetodyPomocnicze
 public:
      static string konwerjsaIntNaString(int liczba);
      string wczytajLinie();
-     char wybierzOpcjeZMenuGlownego();
-     char wczytajZnak();
+     static char wybierzOpcjeZMenuGlownego();
+     static char wczytajZnak();
      string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
      int konwersjaStringNaInt(string liczba);
      string pobierzLiczbe(string tekst, int pozycjaZnaku);
-     char wybierzOpcjeZMenuUzytkownika();
+     static char wybierzOpcjeZMenuUzytkownika();
 };
-
-
-
-
 
 #endif

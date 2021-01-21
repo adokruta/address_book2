@@ -4,12 +4,10 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
-#include <fstream>
 #include <sstream>
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
-#include "UzytkownikMeneger.h"
 #include "PlikZAdresatami.h"
 
 
@@ -17,22 +15,23 @@ using namespace std;
 
 class AdresatMeneger
 {
-    friend class KsiazkaAdresowa;
-    friend class UzytkownikMeneger;
-
-    //
-    int idOstatniegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
-    Adresat adresat;
-    MetodyPomocnicze metodyPomocnicze;
+    PlikZAdresatami plikZAdresatami;
+
     Adresat podajDaneNowegoAdresata();
+    void wyswietlDaneAdresata(Adresat adresat);
 
     public:
 
-    AdresatMeneger();
+    AdresatMeneger(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+        {
+            adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+        };
 
-    int dodajAdresata();
-
+    void dodajAdresata();
+    void wyswietlAdresatowZalogowanegoUzytkownika();
 
 };
 

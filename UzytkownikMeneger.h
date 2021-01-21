@@ -17,34 +17,29 @@ using namespace std;
 
 class UzytkownikMeneger
 {
-    friend class KsiazkaAdresowa;
-    friend class AdresatMeneger;
-
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
-    vector <Adresat> adresaci;
     PlikZUzytkownikami plikZUzytkownikami;
     MetodyPomocnicze metodyPomocnicze;
-    Uzytkownik zalogowanyUzytkownik;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-    void wyswietlDaneAdresata(Adresat adresat);
-    void zmianaHaslaZalogowanegoUzytkownika();
 
 public:
 
-    UzytkownikMeneger(string nazwaPlikuZUzytkownikami) :  plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikMeneger(string nazwaPlikuZUzytkownikami) :  plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    {
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    };
 
     void rejestracjaUzytkownika();
-    void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
-    int logowanieUzytkownika ();
-    void ustawIdZalogowanegoUzytkownika();
+    void logowanieUzytkownika ();
     int pobierzIdZalogowanegoUzytkownika();
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    void wyswietlAdresatowZalogowanegoUzytkownika();
+    void wylogujUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
 };
 
