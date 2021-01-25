@@ -43,3 +43,8 @@ void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
 {
     uzytkownikMeneger.zmianaHaslaZalogowanegoUzytkownika();
 }
+
+void KsiazkaAdresowa :: usunAdresata()
+{
+    adresatMeneger->usunAdresata();
+}

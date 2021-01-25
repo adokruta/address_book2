@@ -21,6 +21,7 @@ class AdresatMeneger
 
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
 
     public:
 
@@ -32,6 +33,7 @@ class AdresatMeneger
 
     void dodajAdresata();
     void wyswietlAdresatowZalogowanegoUzytkownika();
+    void usunAdresata();
 
 };
 
