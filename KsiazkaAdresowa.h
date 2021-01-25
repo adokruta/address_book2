@@ -34,6 +34,7 @@ public:
     bool czyUzytkownikJestZalogowany();
     void wyswietlAdresatowZalogowanegoUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    void usunAdresata();
 
 };
 

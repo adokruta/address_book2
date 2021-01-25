@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <windows.h>
 
+
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 
@@ -24,16 +25,18 @@ class PlikZAdresatami
      MetodyPomocnicze metodyPomocnicze;
      int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
      int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+     int pobierzIdOstatniegoAdresata();
 
  public:
 
      PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI (nazwaPlikuZAdresatami){
-     idOstatniegoAdresata = 0;
+     idOstatniegoAdresata = pobierzIdOstatniegoAdresata();
      };
 
      bool dopiszAdresataDoPliku(Adresat adresat);
      vector <Adresat>  wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-     int pobierzIdOstateniegoAdresata();
+     int zwrocIdOstatniegoAdresata ();
+     void usunWybranaLinieWPliku(int idUsuwanegoAdresata);
 
 };
 
