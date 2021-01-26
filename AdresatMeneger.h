@@ -11,6 +11,7 @@
 #include "PlikZAdresatami.h"
 
 
+
 using namespace std;
 
 class AdresatMeneger

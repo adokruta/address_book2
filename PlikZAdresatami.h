@@ -1,5 +1,5 @@
-#ifndef PLIZZADRESATAMI_H
-#define PLIZZADRESATAMI_H
+#ifndef PLIKZADRESATAMI_H
+#define PLIKZADRESATAMI_H
 
 #include <iostream>
 #include <vector>
@@ -7,19 +7,18 @@
 #include <cstdlib>
 #include <windows.h>
 
-
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZAdresatami
+class PlikZAdresatami : public PlikTekstowy
+
 {
-     const string NAZWA_PLIKU_Z_ADRESATAMI;
      int idOstatniegoAdresata;
 
      Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-     bool czyPlikJestPusty(fstream &plikTekstowy);
      string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
      MetodyPomocnicze metodyPomocnicze;
@@ -30,7 +29,7 @@ class PlikZAdresatami
 
  public:
 
-     PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI (nazwaPlikuZAdresatami){
+     PlikZAdresatami(string nazwaPliku) : PlikTekstowy (nazwaPliku){
      idOstatniegoAdresata = pobierzIdOstatniegoAdresata();
      };
 
