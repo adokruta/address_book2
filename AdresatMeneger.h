@@ -34,6 +34,7 @@ class AdresatMeneger
     void dodajAdresata();
     void wyswietlAdresatowZalogowanegoUzytkownika();
     void usunAdresata();
+    void edytujAdresata();
 
 };
 

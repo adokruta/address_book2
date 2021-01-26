@@ -54,10 +54,10 @@ int main()
                 ksiazkaAdresowa.usunAdresata();
                 //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
-                /*
+
             case '6':
-                edytujAdresata(adresaci);
-                break; */
+                ksiazkaAdresowa.edytujAdresata();
+                break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;

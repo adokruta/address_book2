@@ -19,6 +19,7 @@ public:
      string pobierzLiczbe(string tekst, int pozycjaZnaku);
      static char wybierzOpcjeZMenuUzytkownika();
      static int wczytajLiczbeCalkowita();
+     static char wybierzOpcjeZMenuEdycja();
 };
 
 #endif
