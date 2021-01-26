@@ -219,14 +219,50 @@ void AdresatMeneger :: wyszukajAdresatowPoImieniu()
         if(iloscAdresatow == 0)
         {
             cout << endl << "W ksiazce adresowej nie ma adresatow z takim imieniem" << endl;
-            system("pause");
         }
     }
     else
     {
         cout << endl << "Ksiazka adresowa jest pusta" << endl << endl;
-        system("pause");
     }
+    cout << endl;
+    system("pause");
 
+}
+
+void AdresatMeneger :: wyszukajAdresatowPoNazwisku()
+{
+    MetodyPomocnicze metodyPomocnicze;
+    string nazwiskoPoszukiwanegoAdresata = "";
+    int iloscAdresatow = 0;
+
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << ">>> WYSZUKIWANIE ADRESATOW O IMIENIU <<<" << endl << endl;
+
+        cout << "Wyszukaj adresatow o nazwisku: ";
+        nazwiskoPoszukiwanegoAdresata = metodyPomocnicze.wczytajLinie();
+        nazwiskoPoszukiwanegoAdresata = metodyPomocnicze.zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoPoszukiwanegoAdresata);
+
+        for (vector <Adresat>::iterator  itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        {
+            if (itr -> pobierzNazwisko() == nazwiskoPoszukiwanegoAdresata)
+            {
+                wyswietlDaneAdresata(*itr);
+                iloscAdresatow++;
+            }
+        }
+        if(iloscAdresatow == 0)
+        {
+            cout << endl << "W ksiazce adresowej nie ma adresatow z takim nazwiskiem" << endl;
+        }
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta" << endl << endl;
+    }
+    cout << endl;
+    system("pause");
 }
 

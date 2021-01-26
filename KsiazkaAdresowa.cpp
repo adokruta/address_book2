@@ -58,3 +58,8 @@ void KsiazkaAdresowa :: wyszukajAdresatowPoImieniu()
 {
     adresatMeneger->wyszukajAdresatowPoImieniu();
 }
+
+void KsiazkaAdresowa :: wyszukajAdresatowPoNazwisku()
+{
+    adresatMeneger->wyszukajAdresatowPoNazwisku();
+}

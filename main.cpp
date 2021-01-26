@@ -44,17 +44,14 @@ int main()
             case '2':
                 ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
-            /*case '3':
-                wyszukajAdresatowPoNazwisku(adresaci);
-                break; */
+            case '3':
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                break;
             case '4':
                 ksiazkaAdresowa.wyswietlAdresatowZalogowanegoUzytkownika();
                 break;
             case '5':
                 ksiazkaAdresowa.usunAdresata();
-                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
-                break;
-
             case '6':
                 ksiazkaAdresowa.edytujAdresata();
                 break;
