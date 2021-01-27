@@ -166,8 +166,9 @@ return false;
             if(idUsuwanegoAdresata != pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia))
             {
                 tymczasowyPlikTekstowy << wczytanaLinia << endl;
+                idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
             }
-         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
+
         }
 
         odczytywanyPlikTekstowy.close();
